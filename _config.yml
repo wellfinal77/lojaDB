@@ -1,13 +1,15 @@
-title: LojaDB
+title: lojaDB
+description: Meu projeto de loja online
 theme: jekyll-theme-primer
-plugins:
-  - jekyll-paginate
-  - jekyll-seo-tag
+markdown: kramdown
 
-# Ignorar pastas desnecessárias
+# Evitar que o GitHub Pages tente renderizar arquivos do projeto
 exclude:
   - node_modules
-  - vendor
-  - Gemfile
-  - Gemfile.lock
+  - backend/node_modules
+  - frontend/node_modules
+  - backend
+  - frontend
   - README.md
+  - package.json
+  - package-lock.json
