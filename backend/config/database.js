@@ -2,11 +2,12 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
-    const mongoURI = process.env.MONGODB_URI || 'mongodb+srv://fina202402_db_user:GGi7eYKB5tI2jNg6@cluster0.1cuz6pd.mongodb.net/LojaDB?appName=Cluster0';
-    
-    const conn = await mongoose.connect(mongoURI, {
-      // MongoDB Atlas connection options
-      serverSelectionTimeoutMS: 5000, // Timeout after 5s instead of 30s
+    if (!process.env.MONGODB_URI) {
+      throw new Error('🔒 MONGODB_URI não definido no .env');
+    }
+
+    const conn = await mongoose.connect(process.env.MONGODB_URI, {
+      serverSelectionTimeoutMS: 5000,
     });
 
     console.log('✅ Connected to MongoDB Atlas');
