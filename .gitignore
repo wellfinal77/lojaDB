@@ -1,0 +1,11 @@
+# Ignorar node_modules de backend e frontend
+/frontend/node_modules
+/backend/node_modules
+
+# Ignorar arquivos de ambiente
+/backend/.env
+/frontend/.env
+
+# Ignorar pastas de build
+/frontend/build
+/backend/dist

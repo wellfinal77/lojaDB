@@ -1,0 +1,13 @@
+title: LojaDB
+theme: jekyll-theme-primer
+plugins:
+  - jekyll-paginate
+  - jekyll-seo-tag
+
+# Ignorar pastas desnecessárias
+exclude:
+  - node_modules
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - README.md
