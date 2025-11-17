@@ -1,7 +1,11 @@
 title: lojaDB
 description: Meu projeto de loja online
-theme: jekyll-theme-primer
 markdown: kramdown
+
+# Configuração para GitHub Pages com React
+# O app React será construído na pasta /docs
+include:
+  - docs
 
 # Evitar que o GitHub Pages tente renderizar arquivos do projeto
 exclude:
@@ -11,5 +15,3 @@ exclude:
   - backend
   - frontend
   - README.md
-  - package.json
-  - package-lock.json

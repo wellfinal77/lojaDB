@@ -19,7 +19,7 @@ function App() {
   return (
     <AuthProvider>
       <CartProvider>
-        <Router>
+        <Router basename={import.meta.env.BASE_URL}>
           <Navbar />
           <main style={{ flex: 1 }}>
             <Routes>
