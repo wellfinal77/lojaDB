@@ -1,0 +1,376 @@
+/* Reset básico e tipografia */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #1e293b; /* cor padrão de texto escuro */
+  background-color: #f3f4f6; /* fundo neutro */
+}
+
+/* Layout principal */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Navbar placeholder */
+nav {
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 16px rgba(37,99,235,0.08);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 1rem;
+}
+
+nav a:hover {
+  color: #1d4ed8;
+}
+
+/* Botões globais */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background-color: #06b6d4;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #0284c7;
+  transform: scale(1.05);
+}
+
+.btn-featured {
+  background-color: #764ba2;
+  color: #fff;
+}
+
+.btn-featured:hover {
+  background-color: #5b3b91;
+  transform: scale(1.05);
+}
+
+/* Cards globais (poderá ser usado em Products) */
+.card {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(37,99,235,0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(37,99,235,0.12);
+}
+
+.card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Tipografia global */
+h1, h2, h3, h4 {
+  color: #1e293b;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+p {
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Links */
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade global */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .btn {
+    width: 100%;
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #root {
+    padding: 0 0.5rem;
+  }
+  h1 {
+    font-size: 1.75rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  .btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+  }
+}
+/* ================= NAVBAR CUSTOM ================= */
+.navbar {
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.08);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-brand .brand-link {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.brand-icon {
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-item .nav-link {
+  color: #2563eb;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  text-decoration: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.nav-item .nav-link:hover {
+  background-color: #f1f5f9;
+}
+
+.nav-item .nav-link.active {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+/* Botão hamburguer */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.navbar-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #2563eb;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px; /* logo abaixo da navbar */
+    right: 0;
+    background: #ffffff;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 200px;
+    padding: 1rem;
+    gap: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+}
+
+/* ===== ANIMAÇÃO HAMBURGUER PARA "X" ===== */
+.navbar-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+/* Navbar base */
+.navbar {
+  width: 100%;
+  background: linear-gradient(90deg, #4a90e2, #9013fe);
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Links principais */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-item {
+  flex-shrink: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Botão toggle (hamburger) */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.navbar-toggle span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.navbar-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.navbar-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    flex-direction: column;
+    background: linear-gradient(180deg, #4a90e2, #9013fe);
+    width: 100%;
+    padding: 20px 0;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-item {
+    text-align: center;
+    width: 100%;
+  }
+
+  .nav-link {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+}
